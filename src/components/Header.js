@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = (props) => {
 	return (
-		<header>
-			<h1>Party Animals</h1>			
+		<header className="Header__Component">
+			<h1>Party Animals Developer</h1>
 		</header>
 	);
 }
