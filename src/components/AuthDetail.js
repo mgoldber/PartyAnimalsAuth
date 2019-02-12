@@ -16,7 +16,6 @@ class AuthDetail extends Component {
 				email: `${this.props.username}`,
 				password: `${this.props.password}`
 			}).then(response => {
-				console.log(response);
 				this.setState({
 					authToken: response.data.token
 				})

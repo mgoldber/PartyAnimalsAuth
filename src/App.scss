@@ -78,16 +78,12 @@ img {
 }
 
 .Login__Component {
-  max-width: 400px;
+  max-width: 100%;
   form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
   }
-}
-
-.ApiDoc__Component {
-  border: 0.5px black solid;
 }
 
 .Footer__Component {

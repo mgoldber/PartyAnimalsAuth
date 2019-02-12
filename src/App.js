@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Login from './components/Login.js';
+import Register from './components/Register.js';
+import RegisterForm from './components/RegisterForm.js';
 import AuthDetail from './components/AuthDetail.js';
 import ApiDoc from './components/ApiDoc.js';
 import Footer from './components/Footer.js';
@@ -23,11 +25,20 @@ class App extends Component {
     });
   }
 
+  onRegisterSubmit = (username, password) => {
+    this.setState({
+      username: username,
+      password: password
+    });
+  }
+
   render() {
     return (
       <div>
         <Header />
         <Login onLoginSubmit={this.onLoginSubmit}/>
+        <RegisterForm onRegisterSubmit={this.onRegisterSubmit}/>
+        <Register username={this.state.username} password={this.state.password} />
         <AuthDetail username={this.state.username} password={this.state.password} />
         <h3>Venue</h3>
         <ApiDoc
@@ -38,9 +49,14 @@ class App extends Component {
         <ApiDoc
           requestType="GET"
           requestHeadline="Get Venue By ID"
-          requestUrl="http://localhost:3005/v1/venue/${id}"
+          requestUrl="http://localhost:3005/v1/venue/id"
         />
         <h3>Animal</h3>
+        <ApiDoc
+          requestType="GET"
+          requestHeadline="Get Animals for Specific Venue"
+          requestUrl="http://localhost:3005/v1/venue/animals/id"
+        />
         <Footer />
       </div>
     );

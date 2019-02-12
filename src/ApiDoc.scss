@@ -1,0 +1,11 @@
+.ApiDoc__Component {
+    display: flex;
+    flex-direction: column;
+    border: 0.5px black solid;
+    .requestUrl {
+      display: flex;
+      justify-content: space-around;
+      max-width: 500px;
+      flex-direction: row;
+    }
+}

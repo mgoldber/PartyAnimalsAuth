@@ -13,13 +13,13 @@ class Login extends Component {
 	handleUsernameChange = (event) => {
 		this.setState({
 			username: event.target.value
-		})
+		});
 	}
 
 	handlePasswordChange = (event) => {
 		this.setState({
 			password: event.target.value
-		})
+		});
 	}
 
 	handleFormSubmit = (event) => {
@@ -38,7 +38,7 @@ class Login extends Component {
 					<input
 						type="email"
 						placeholder="Username"
-						id="username"
+						id="usernameLogin"
 						value={this.state.username}
 						onChange={this.handleUsernameChange}
 					/>
@@ -48,7 +48,7 @@ class Login extends Component {
 					<input
 						type="password"
 						placeholder="Password"
-						id="password"
+						id="passwordLogin"
 						value={this.state.password}
 						onChange={this.handlePasswordChange}
 					/>
