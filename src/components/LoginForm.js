@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/LoginForm.scss';
 
 class LoginForm extends Component {
 
@@ -31,14 +30,14 @@ class LoginForm extends Component {
   render() {
     return (
       <div className="Auth__Component">
-        <h4>Login</h4>
+        <h4>Sign In</h4>
         <form onSubmit={this.handleFormSubmit}>
           <label>
             Username
           </label>
           <input
             type="email"
-            placeholder="Username"
+            placeholder="example@gmail.com"
             id="usernameLogin"
             value={this.state.usernameLogin}
             onChange={this.handleUsernameChange}
@@ -48,7 +47,7 @@ class LoginForm extends Component {
           </label>
           <input
             type="password"
-            placeholder="Password"
+            placeholder="********"
             id="passwordLogin"
             value={this.state.passwordLogin}
             onChange={this.handlePasswordChange}

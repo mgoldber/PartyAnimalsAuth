@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/RegisterAction.scss';
 import axios from 'axios';
 
 class RegisterAction extends Component {
@@ -45,7 +44,7 @@ class RegisterAction extends Component {
 
   render() {
     return (
-      <div>
+      <div class="display-none">
       </div>
     )
   }

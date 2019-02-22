@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/Token.scss';
 import axios from 'axios';
 
 class Token extends Component {
@@ -27,11 +26,11 @@ class Token extends Component {
 	}
 
 	renderTokenDetails() {
-		return (<div><p>{this.state.authToken}</p></div>)
+		return (<div><p className="token-details">{this.state.authToken}</p></div>)
 	}
 
 	renderEmptyState() {
-		return(<div><p>Please complete your login to see your auth token</p></div>)
+		return(<div><p className="token-details">Please complete your login to see your auth token</p></div>)
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -43,7 +42,7 @@ class Token extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="Token__Component wrapper">
 				<h2>Token Details</h2>
 				{this.props.usernameLogin ? this.renderTokenDetails() : this.renderEmptyState()}
 			</div>

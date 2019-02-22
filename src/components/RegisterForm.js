@@ -1,54 +1,51 @@
-import React, { Component } from 'react';
-import '../styles/RegisterForm.scss';
+import React, { Component } from "react";
 
 class RegisterForm extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      usernameRegister: '',
-      passwordRegister: ''
-    }
+      usernameRegister: "",
+      passwordRegister: ""
+    };
   }
 
-  handleUsernameChange = (event) => {
+  handleUsernameChange = event => {
     this.setState({
       usernameRegister: event.target.value
     });
-  }
+  };
 
-  handlePasswordChange = (event) => {
+  handlePasswordChange = event => {
     this.setState({
       passwordRegister: event.target.value
     });
-  }
+  };
 
-  handleFormSubmit = (event) => {
+  handleFormSubmit = event => {
     event.preventDefault();
-    this.props.onRegisterSubmit(this.state.usernameRegister, this.state.passwordRegister);
-  }
+    this.props.onRegisterSubmit(
+      this.state.usernameRegister,
+      this.state.passwordRegister
+    );
+  };
 
   render() {
     return (
-      <div className="">
+      <div className="Auth__Component">
         <h4>Register</h4>
         <form onSubmit={this.handleFormSubmit}>
-          <label>
-            Username
-          </label>
+          <label>Username</label>
           <input
             type="email"
-            placeholder="Username"
+            placeholder="example@gmail.com"
             id="usernameRegister"
             value={this.state.usernameRegister}
             onChange={this.handleUsernameChange}
           />
-          <label>
-            Password
-          </label>
+          <label>Password</label>
           <input
             type="password"
-            placeholder="Password"
+            placeholder="********"
             id="passwordRegister"
             value={this.state.passwordRegister}
             onChange={this.handlePasswordChange}
@@ -56,9 +53,8 @@ class RegisterForm extends Component {
           <input type="submit" />
         </form>
       </div>
-    )
+    );
   }
-
 }
 
 export default RegisterForm;

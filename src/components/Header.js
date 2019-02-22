@@ -1,9 +1,8 @@
 import React from 'react';
-import '../styles/Header.scss';
 
 const Header = (props) => {
 	return (
-		<header className="Header__Component">
+		<header className="Header__Component wrapper">
 			<h1>Party Animals Developer</h1>
 		</header>
 	);

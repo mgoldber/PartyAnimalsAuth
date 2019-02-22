@@ -1,0 +1,53 @@
+.apiDoc {
+  background-color: $primary-background-color;
+  border-radius: 50px;
+  margin-top: 150px;
+
+  h3 {
+    font-size: 30px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $secondary-font-color;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+  }
+
+  .ApiDoc__Component {
+    padding-left: 50px;
+    padding-bottom: 50px;
+    font-size: 25px;
+    .requestHeadline {
+      letter-spacing: 2px;
+    }
+
+    .requestUrlContainer {
+      font-size: 20px;
+      display: flex;
+      border: 2px solid $secondary-font-color;
+      border-radius: 50px;
+      width: fit-content;
+      padding: 20px;
+      position: relative;
+
+      h5 {
+        margin: 0;
+      }
+
+      .requestType {
+        background-color: $secondary-font-color;
+        color: $primary-background-color;
+        margin-right: 20px;
+        position: absolute;;
+        padding: 20px;
+      }
+
+      .requestUrl {
+        margin-left: 100px;
+      }
+
+    }
+
+  }
+}
+
