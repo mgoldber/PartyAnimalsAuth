@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import '../styles/RegisterAction.scss';
 import axios from 'axios';
 
-class Register extends Component {
+class RegisterAction extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -10,16 +12,15 @@ class Register extends Component {
   }
 
   async register() {
-    console.log("Going to the registration");
     try {
       await axios.post('http://localhost:3005/v1/account/register', {
-        email: `${this.props.username}`,
-        password: `${this.props.password}`
+        email: `${this.props.usernameRegister}`,
+        password: `${this.props.passwordRegister}`
       }).then(response => {
         if (response.status === 200) {
           this.setState({
             registrationStatus: true
-          })
+          });
         }
       });
     } catch (error) {
@@ -27,28 +28,28 @@ class Register extends Component {
     }
   }
 
-  renderRegistrationStatus() {
-    return(<div><p>{this.state.registrationStatus}</p></div>)
+  renderRegisterDetails() {
+    return(<div></div>)
   }
 
   renderEmptyState() {
-    return (<div><p>Please complete your registration</p></div>)
+    return(<div><p>Please complete your registration to be able to login</p></div>)
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.username && this.props.password && this.props.username !== prevProps.userName &&
-      this.props.password !== prevProps.password) {
-        this.register();
+    if (this.props.usernameRegister && this.props.passwordRegister && this.props.usernameRegister !== prevProps.usernameRegister &&
+      this.props.passwordRegister !== prevProps.passwordRegister) {
+      this.register();
     }
   }
 
   render() {
     return (
       <div>
-        <h2>Registration</h2>
       </div>
     )
   }
+
 }
 
-export default Register;
+export default RegisterAction;

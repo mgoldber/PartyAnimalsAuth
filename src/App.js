@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
-import Login from './components/Login.js';
-import Register from './components/Register.js';
+import LoginForm from './components/LoginForm.js';
 import RegisterForm from './components/RegisterForm.js';
-import AuthDetail from './components/AuthDetail.js';
+import RegisterAction from './components/RegisterAction.js';
+import Token from './components/Token.js';
 import ApiDoc from './components/ApiDoc.js';
 import Footer from './components/Footer.js';
-import './App.scss';
+import './styles/App.scss';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      usernameLogin: '',
+      usernameRegister: '',
+      passwordLogin: '',
+      passwordRegister: ''
     }
   }
 
   onLoginSubmit = (username, password) => {
     this.setState({
-      username: username,
-      password: password
+      usernameLogin: username,
+      passwordLogin: password
     });
   }
 
   onRegisterSubmit = (username, password) => {
     this.setState({
-      username: username,
-      password: password
+      usernameRegister: username,
+      passwordRegister: password
     });
   }
 
@@ -36,10 +38,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Login onLoginSubmit={this.onLoginSubmit}/>
-        <RegisterForm onRegisterSubmit={this.onRegisterSubmit}/>
-        <Register username={this.state.username} password={this.state.password} />
-        <AuthDetail username={this.state.username} password={this.state.password} />
+        <LoginForm onLoginSubmit={this.onLoginSubmit} />
+        <RegisterForm onRegisterSubmit={this.onRegisterSubmit} />
+        <RegisterAction usernameRegister={this.state.usernameRegister} passwordRegister={this.state.passwordRegister} />
+        <Token usernameLogin={this.state.usernameLogin} passwordLogin={this.state.passwordLogin} />
         <h3>Venue</h3>
         <ApiDoc
           requestType="GET"

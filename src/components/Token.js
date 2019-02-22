@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import '../styles/Token.scss';
 import axios from 'axios';
 
-class AuthDetail extends Component {
+class Token extends Component {
 
 	constructor(props) {
 		super(props);
@@ -13,8 +14,8 @@ class AuthDetail extends Component {
 	async logIn() {
 		try {
 			await axios.post('http://localhost:3005/v1/account/login', {
-				email: `${this.props.username}`,
-				password: `${this.props.password}`
+				email: `${this.props.usernameLogin}`,
+				password: `${this.props.passwordLogin}`
 			}).then(response => {
 				this.setState({
 					authToken: response.data.token
@@ -30,12 +31,12 @@ class AuthDetail extends Component {
 	}
 
 	renderEmptyState() {
-		return(<div><p>Please complete your login to see your token</p></div>)
+		return(<div><p>Please complete your login to see your auth token</p></div>)
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.username && this.props.password && this.props.username !== prevProps.username &&
-			this.props.password !== prevProps.password) {
+		if (this.props.usernameLogin && this.props.passwordLogin && this.props.usernameLogin !== prevProps.usernameLogin &&
+			this.props.passwordLogin !== prevProps.passwordLogin) {
 			this.logIn();
 		}
 	}
@@ -44,10 +45,10 @@ class AuthDetail extends Component {
 		return (
 			<div>
 				<h2>Token Details</h2>
-				{this.props.username ? this.renderTokenDetails() : this.renderEmptyState()}
+				{this.props.usernameLogin ? this.renderTokenDetails() : this.renderEmptyState()}
 			</div>
 		);
 	}
 };
 
-export default AuthDetail;
+export default Token;

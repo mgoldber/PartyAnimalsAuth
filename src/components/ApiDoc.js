@@ -1,5 +1,5 @@
 import React from 'react';
-import "../ApiDoc.scss";
+import "../styles/ApiDoc.scss";
 
 const ApiDoc = (props) => {
 	return (

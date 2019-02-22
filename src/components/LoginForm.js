@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
-import '../styles/RegisterForm.scss';
+import '../styles/LoginForm.scss';
 
-class RegisterForm extends Component {
+class LoginForm extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      usernameRegister: '',
-      passwordRegister: ''
+      usernameLogin: '',
+      passwordLogin: ''
     }
   }
 
   handleUsernameChange = (event) => {
     this.setState({
-      usernameRegister: event.target.value
+      usernameLogin: event.target.value
     });
   }
 
   handlePasswordChange = (event) => {
     this.setState({
-      passwordRegister: event.target.value
+      passwordLogin: event.target.value
     });
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.props.onRegisterSubmit(this.state.usernameRegister, this.state.passwordRegister);
+    this.props.onLoginSubmit(this.state.usernameLogin, this.state.passwordLogin);
   }
 
   render() {
     return (
-      <div className="">
-        <h4>Register</h4>
+      <div className="Auth__Component">
+        <h4>Login</h4>
         <form onSubmit={this.handleFormSubmit}>
           <label>
             Username
@@ -39,8 +39,8 @@ class RegisterForm extends Component {
           <input
             type="email"
             placeholder="Username"
-            id="usernameRegister"
-            value={this.state.usernameRegister}
+            id="usernameLogin"
+            value={this.state.usernameLogin}
             onChange={this.handleUsernameChange}
           />
           <label>
@@ -49,8 +49,8 @@ class RegisterForm extends Component {
           <input
             type="password"
             placeholder="Password"
-            id="passwordRegister"
-            value={this.state.passwordRegister}
+            id="passwordLogin"
+            value={this.state.passwordLogin}
             onChange={this.handlePasswordChange}
           />
           <input type="submit" />
@@ -61,4 +61,4 @@ class RegisterForm extends Component {
 
 }
 
-export default RegisterForm;
+export default LoginForm;
