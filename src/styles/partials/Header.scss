@@ -6,4 +6,12 @@
     font-size: 85px;
     width: 50%;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 55px;
+      text-align: center;
+      width: 100%;
+    }
+  }
 }

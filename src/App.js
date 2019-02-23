@@ -55,11 +55,19 @@ class App extends Component {
             requestType="GET"
             requestHeadline="Get All Venues"
             requestUrl="http://localhost:3005/v1/venue/"
+            propOneParam="key"
+            propOneVal="your api key"
+            propOneDescription="required"
+            propOneDType="string"
           />
           <ApiDoc
             requestType="GET"
             requestHeadline="Get Venue By ID"
             requestUrl="http://localhost:3005/v1/venue/id"
+            propOneParam="key"
+            propOneVal="your api key"
+            propOneDescription="required"
+            propOneDType="string"
           />
         </section>
         <section className="apiDoc wrapper">
@@ -68,6 +76,10 @@ class App extends Component {
             requestType="GET"
             requestHeadline="Get Animals for Specific Venue"
             requestUrl="http://localhost:3005/v1/venue/animals/id"
+            propOneParam="key"
+            propOneVal="your api key"
+            propOneDescription="required"
+            propOneDType="string"
           />
         </section>
         <Footer />

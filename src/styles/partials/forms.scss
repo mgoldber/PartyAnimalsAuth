@@ -53,6 +53,10 @@
             color: $primary-background-color;
             text-transform: uppercase;
             font-weight: 700;
+
+            &:hover {
+              background: lighten($secondary-font-color, 25%);
+            }
         }
     }
 }
