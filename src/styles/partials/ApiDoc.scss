@@ -37,17 +37,19 @@
       .requestType {
         background-color: $secondary-font-color;
         color: $primary-background-color;
-        margin-right: 20px;
-        position: absolute;;
+        position: absolute;
         padding: 20px;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        flex-shrink: 0;
       }
 
-      .requestUrl {
-        margin-left: 100px;
+      .requestURL {
+        margin-left: 75px;
       }
-
     }
 
   }
 }
-

@@ -44,7 +44,7 @@ class RegisterAction extends Component {
 
   render() {
     return (
-      <div class="display-none">
+      <div className="display-none">
       </div>
     )
   }

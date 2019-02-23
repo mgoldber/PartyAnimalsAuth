@@ -1,68 +1,142 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Venues
 
-## Available Scripts
+## Get All  
 
-In the project directory, you can run:
+Get all of the venues
 
-### `npm start`
+**URL** : `/v1/venue/`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Method** : `GET`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**Permissions required** : Yes
 
-### `npm test`
+**Data constraints**
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+No data needs to be provided. Can be empty body
 
-### `npm run build`
+**Data example**
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json
+{
+}
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### Success Response
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Content example**
 
-### `npm run eject`
+```json
+[
+  {
+    "geometry": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "reviews": [
+      "REVIEW_ID"
+    ],
+    "animals": [
+      "ANIMAL_ID"
+    ],
+    "_id": "ID",
+    "__v": 4,
+    "name": "VENUE NAME HERE",
+    "image": "IMAGE_URL",
+    "venuetype": "VENUE_TYPE"
+  }
+]
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Error Responses
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Condition** : If error is returned from the mongo query, will be returned in response.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Get By ID
 
-## Learn More
+Get a single venue by ID
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**URL** : `/v1/venue/:id`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Method** : `GET`
 
-### Code Splitting
+**Permissions required** : Yes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Data constraints**
 
-### Analyzing the Bundle Size
+The ID of the venue that is being retrieved must be provided.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**Data example**
 
-### Making a Progressive Web App
+```json
+{
+  "id": "VENUE_ID"
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### Success Response
 
-### Advanced Configuration
+**Content example**
+```json
+{
+  "geometry": {
+    "type": "Point",
+    "coordinates": []
+  },
+  "reviews": [
+    "REVIEW_ID"
+  ],
+  "animals": [
+    "ANIMAL_ID"
+  ],
+  "_id": "ID",
+  "__v": 4,
+  "name": "VENUE NAME HERE",
+  "image": "IMAGE_URL",
+  "venuetype": "VENUE_TYPE"
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### Error Responses
 
-### Deployment
+**Condition** : If error is returned from the mongo query, will be returned in response.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+# Animal
 
-### `npm run build` fails to minify
+## Get Animals by Venue ID
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Get animals by venue ID
+
+**URL** : `/v1/venue/animals/:id`
+
+**Method** : `GET`
+
+**Permissions required** : Yes
+
+**Data constraints**
+
+The ID of the venue that is being retrieved must be provided.
+
+**Data example**
+
+```json
+{
+  "id": "VENUE_ID"
+}
+```
+
+#### Success Response
+
+**Content example**
+```json
+[
+    {
+      "_id": "ANIMAL_ID",
+      "name": "ANIMAL_NAME",
+      "type": "ANIMAL_TYPE",
+      "image": "IMAGE_URL",
+      "dance": "ANIMAL_FAVOURITE_DANCE",
+      "venue": "VENUE_ID",
+      "__v": "VERSION"
+    }
+]
