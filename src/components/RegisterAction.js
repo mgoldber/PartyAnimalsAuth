@@ -12,7 +12,7 @@ class RegisterAction extends Component {
 
   async register() {
     try {
-      await axios.post('http://localhost:3005/v1/account/register', {
+      await axios.post('https://partyanimals.hackeryou.com/api/v1/account/register', {
         email: `${this.props.usernameRegister}`,
         password: `${this.props.passwordRegister}`
       }).then(response => {

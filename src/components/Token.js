@@ -12,7 +12,7 @@ class Token extends Component {
 
 	async logIn() {
 		try {
-			await axios.post('http://localhost:3005/v1/account/login', {
+			await axios.post('https://partyanimals.hackeryou.com/api/v1/account/login', {
 				email: `${this.props.usernameLogin}`,
 				password: `${this.props.passwordLogin}`
 			}).then(response => {
