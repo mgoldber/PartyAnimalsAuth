@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/PartyAnimalsAuthDocs/precache-manifest.5c519166016571c0fcf93fbad9e10a00.js"
+  "/PartyAnimalsAuthDocs/precache-manifest.e7ac2ffa3107721b4fd048c75d1f8e2b.js"
 );
 
 workbox.clientsClaim();
